@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Add your styles here if needed */
+    </style>
+</head>
+
+<body>
+
+    <h2>Edit Employee</h2>
+
+    <form method="post" action="{% url 'update-employee' employee_id=employee.id %}">
+
+        {% csrf_token %}
+       
+       
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" name="employeeName" value="{{ employee.employeeName }}" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ employee.email }}" required><br>
+
+        <label for="employeeId">Employee ID:</label>
+        <input type="text" id="employeeId" name="employeeId" value="{{ employee.employeeId }}" required><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" value="{{ employee.address }}"><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" value="{{ employee.phoneNumber }}"><br>
+
+        <input type="submit" value="Save">
+    </form>
+
+
+</body>
+
+</html>

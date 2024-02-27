@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- employee_form.html -->
+
+<h2>Employee Form</h2>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <label for="employeeName">Employee Name:</label>
+    <input type="text" id="employeeName" name="employeeName" required>
+
+    <label for="employeeId">Employee ID:</label>
+    <input type="text" id="employeeId" name="employeeId" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+    <button type="submit">Add Employee</button>
+</form>
+
+
+    <script>
+        function addEmployee() {
+            var employeeName = document.getElementById("employeeName").value;
+            var employeeId = document.getElementById("employeeId").value;
+            var email = document.getElementById("email").value;
+            var address = document.getElementById("address").value;
+            var phoneNumber = document.getElementById("phoneNumber").value;
+
+            // You can perform further actions with the employee data, such as sending it to a server or displaying it on the page.
+            console.log("Employee Name: " + employeeName);
+            console.log("Employee ID: " + employeeId);
+            console.log("Email: " + email);
+            console.log("Address: " + address);
+            console.log("Phone Number: " + phoneNumber);
+
+            // You can clear the form fields after adding an employee if needed.
+            document.getElementById("employeeForm").reset();
+        }
+    </script>
+
+</body>
+</html>
